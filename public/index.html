@@ -100,14 +100,6 @@
         const descriptionHtml = document.querySelector("#description");
         const buttonHtml = document.querySelector("#button");
 
-        // if (urlParams.logout) {
-        //   console.log('Logging Out')
-        //   firebase.auth().signOut();
-        //   document.location.href = '/';
-        // };
-
-        console.log("Init Auth Provider");
-
         let provider = new firebase.auth.GoogleAuthProvider();
         provider.addScope("profile");
         provider.addScope("email");
@@ -115,8 +107,6 @@
           prompt: "select_account",
           hd: "students.berkeley.net",
         });
-
-        console.log("Created provider");
 
         firebase.auth().onAuthStateChanged(function (user) {
           console.log("Checking onAuthStateChanged");
